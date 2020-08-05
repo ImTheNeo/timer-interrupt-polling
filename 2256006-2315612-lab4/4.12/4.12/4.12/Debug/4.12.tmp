@@ -1,0 +1,52 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.7</VERSION>
+ <DEVICE>"ATmega128"</DEVICE>
+ <WORKING_DIR>C:\Users\asus\Desktop\cng336_lab4\4.12\4.12\4.12\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\asus\Desktop\cng336_lab4\4.12\4.12\4.12\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\avrasm\inc\m128def.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\asus\Desktop\cng336_lab4\4.12\4.12\4.12\Debug\4.12.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>4.12.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>4.12.map</FILE>
+  <FILE>4.12.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <main><FILE>C:\Users\asus\Desktop\cng336_lab4\4.12\4.12\4.12\main.asm</FILE><LINE>13</LINE></main>
+  <IsrTim><FILE>C:\Users\asus\Desktop\cng336_lab4\4.12\4.12\4.12\main.asm</FILE><LINE>145</LINE></IsrTim>
+  <USART><FILE>C:\Users\asus\Desktop\cng336_lab4\4.12\4.12\4.12\main.asm</FILE><LINE>29</LINE></USART>
+  <INTEN><FILE>C:\Users\asus\Desktop\cng336_lab4\4.12\4.12\4.12\main.asm</FILE><LINE>155</LINE></INTEN>
+  <timer><FILE>C:\Users\asus\Desktop\cng336_lab4\4.12\4.12\4.12\main.asm</FILE><LINE>121</LINE></timer>
+  <END><FILE>C:\Users\asus\Desktop\cng336_lab4\4.12\4.12\4.12\main.asm</FILE><LINE>21</LINE></END>
+  <WELCOME><FILE>C:\Users\asus\Desktop\cng336_lab4\4.12\4.12\4.12\main.asm</FILE><LINE>81</LINE></WELCOME>
+  <SENDCHAR><FILE>C:\Users\asus\Desktop\cng336_lab4\4.12\4.12\4.12\main.asm</FILE><LINE>42</LINE></SENDCHAR>
+  <Loop_1><FILE>C:\Users\asus\Desktop\cng336_lab4\4.12\4.12\4.12\main.asm</FILE><LINE>43</LINE></Loop_1>
+  <SENDSTR><FILE>C:\Users\asus\Desktop\cng336_lab4\4.12\4.12\4.12\main.asm</FILE><LINE>48</LINE></SENDSTR>
+  <Loop_2><FILE>C:\Users\asus\Desktop\cng336_lab4\4.12\4.12\4.12\main.asm</FILE><LINE>52</LINE></Loop_2>
+  <Loop_3><FILE>C:\Users\asus\Desktop\cng336_lab4\4.12\4.12\4.12\main.asm</FILE><LINE>57</LINE></Loop_3>
+  <RECVCHAR><FILE>C:\Users\asus\Desktop\cng336_lab4\4.12\4.12\4.12\main.asm</FILE><LINE>59</LINE></RECVCHAR>
+  <Loop_4><FILE>C:\Users\asus\Desktop\cng336_lab4\4.12\4.12\4.12\main.asm</FILE><LINE>60</LINE></Loop_4>
+  <RECVSTR><FILE>C:\Users\asus\Desktop\cng336_lab4\4.12\4.12\4.12\main.asm</FILE><LINE>65</LINE></RECVSTR>
+  <Loop_5><FILE>C:\Users\asus\Desktop\cng336_lab4\4.12\4.12\4.12\main.asm</FILE><LINE>69</LINE></Loop_5>
+  <Loop_6><FILE>C:\Users\asus\Desktop\cng336_lab4\4.12\4.12\4.12\main.asm</FILE><LINE>74</LINE></Loop_6>
+  <MSG1><FILE>C:\Users\asus\Desktop\cng336_lab4\4.12\4.12\4.12\main.asm</FILE><LINE>118</LINE></MSG1>
+  <Loop_7><FILE>C:\Users\asus\Desktop\cng336_lab4\4.12\4.12\4.12\main.asm</FILE><LINE>87</LINE></Loop_7>
+  <Loop_8><FILE>C:\Users\asus\Desktop\cng336_lab4\4.12\4.12\4.12\main.asm</FILE><LINE>92</LINE></Loop_8>
+  <MSG2><FILE>C:\Users\asus\Desktop\cng336_lab4\4.12\4.12\4.12\main.asm</FILE><LINE>119</LINE></MSG2>
+  <Loop_9><FILE>C:\Users\asus\Desktop\cng336_lab4\4.12\4.12\4.12\main.asm</FILE><LINE>98</LINE></Loop_9>
+  <Loop_10><FILE>C:\Users\asus\Desktop\cng336_lab4\4.12\4.12\4.12\main.asm</FILE><LINE>103</LINE></Loop_10>
+  <cont><FILE>C:\Users\asus\Desktop\cng336_lab4\4.12\4.12\4.12\main.asm</FILE><LINE>109</LINE></cont>
+  <Loop_11><FILE>C:\Users\asus\Desktop\cng336_lab4\4.12\4.12\4.12\main.asm</FILE><LINE>114</LINE></Loop_11>
+  <still><FILE>C:\Users\asus\Desktop\cng336_lab4\4.12\4.12\4.12\main.asm</FILE><LINE>150</LINE></still>
+ </LABELS>
+</ASSEMBLER_INFO>

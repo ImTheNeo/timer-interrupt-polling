@@ -1,0 +1,157 @@
+.include "m128def.inc"
+
+.org 0x0000
+rjmp main
+
+.org 0x0018   
+rjmp IsrTim
+
+.EQU UCSR0C_ADDR = 0x95
+
+
+
+main:
+ldi r16,high(RAMEND)
+out SPH,r16
+ldi r16,low(RAMEND)
+out SPL,r16
+call USART
+call INTEN
+call timer
+END:call WELCOME
+
+
+rjmp END
+
+
+
+
+USART:	
+		ldi r16,0x00;
+		out UCSR0A,r16;
+		ldi r16,0x18
+		out UCSR0B,r16;
+		ldi r16,0x86
+		sts UCSR0C,r16
+		ldi r16,0x00;
+		sts UBRR0H,r16
+		ldi r16,0x33;
+		out UBRR0L,r16;
+ret
+
+SENDCHAR:
+L1:		sbis UCSR0A, UDRE0 
+		rjmp L1 
+		out UDR0, R16 
+ret
+
+SENDSTR:
+		ldi XL,LOW(0x0200)
+		ldi XH,HIGH(0x0200)
+		ldi r18, '$'
+L2:		ld r16, X+
+		cp r16, r18
+		breq L3
+        call SENDCHAR
+		jmp L2
+L3:		ret
+
+RECVCHAR:
+L4:		sbis UCSR0A,RXC0
+		rjmp L4
+		in r17, UDR0
+ret
+
+RECVSTR:
+		ldi YL,LOW(0x0400)
+		ldi YH,HIGH(0x0400)
+		ldi r18,'$'
+L5:		call RECVCHAR
+		cp r17,r18
+		breq L6
+		st Y+, r17
+		jmp L5
+L6:		ldi r20,'\n'
+		st Y+,r20
+		ldi r20,'\r'
+		st Y+,r20
+		st Y+,r18
+ret
+
+WELCOME:
+		ldi ZL, LOW(MSG1<<1)
+		ldi ZH, HIGH(MSG1<<1)
+		ldi XL,LOW(0x0200)
+		ldi XH,HIGH(0x0200)
+		ldi r18, '$'
+L7:		lpm r19, Z+
+		st X+,r19
+		cp  r19,r18
+		breq L8
+		jmp L7
+L8:		call SENDSTR
+		call RECVSTR
+		ldi ZL, LOW(MSG2<<1)
+		ldi ZH, HIGH(MSG2<<1)
+		ldi XH, HIGH(0x200)
+		ldi XL, LOW(0x200)
+L9:		lpm r19,Z+
+		st X+,r19
+		cp  r19,r18
+		breq L10
+		jmp L9
+L10:	call SENDSTR
+		ldi XL,LOW(0x0200)
+		ldi XH,HIGH(0x0200)
+		ldi YL,LOW(0x0400)
+		ldi YH,HIGH(0x0400)
+		
+qwe:	ld  r20, Y+
+		st X+,r20
+		cp  r20, r18
+		breq L11
+		jmp qwe
+L11:	call SENDSTR			
+		ret
+
+.ORG 0x500
+MSG1: .DB "What is your name ?",'\n','\r','$'
+MSG2: .DB "Hello $"
+
+Timer:
+LDI R16,0xFF
+out ddra,R16
+out ddrb,r16
+LDI R20,0x0
+OUT TCCR1A,R20 
+OUT TCNT1H,R20
+OUT TCNT1L,R20 
+
+LDI R20,0x1E ;8Mhz is assumed wil be changed in the lab
+OUT OCR1AH,R20 
+LDI R20,0x84
+OUT OCR1AL,R20 
+
+LDI R20,0x0D
+OUT TCCR1B,R20
+
+ldi R21,0
+ldi R22,0
+LDI R20,(1<<OCIE1A)
+OUT TIMSK,R20
+SEI
+ret
+
+IsrTim:
+clc
+Inc R21
+brne dontinc21
+inc R22
+dontinc21:
+out portA,R21
+out portB,R22
+reti
+
+INTEN:
+SEI
+ret
